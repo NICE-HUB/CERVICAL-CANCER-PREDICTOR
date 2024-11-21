@@ -1,0 +1,35 @@
+.title {
+  text-decoration: none;
+  color: #fff;
+}
+.title:hover {
+  background-color: black;
+}
+
+@media only screen and (min-width: 900px) {
+  .containerStyle {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 650px;
+    background-image: url("../assets/read.png");
+  }
+  .section2 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .containerStyle {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 300px;
+    background-image: url("../assets/read.png");
+  }
+  .section2 {
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+  }
+}

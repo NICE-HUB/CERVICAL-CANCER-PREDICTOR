@@ -1,0 +1,138 @@
+/* Overall Container */
+.firstbody {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  background-color: #f5f7fa; /* Softer background for the page */
+  padding: 20px;
+}
+
+/* Main Section Styling */
+.Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto; /* Avoid fixed height for better responsiveness */
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.Section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: #ddd;
+}
+
+/* Upload and Action Section Styling */
+.ActionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Limit maximum width for better alignment */
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin-bottom: 20px;
+}
+
+.UploadButton {
+  height: 50px;
+  width: 250px;
+  background-color: #1c2859; /* Consistent with the button colors */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.UploadButton:hover {
+  cursor: pointer;
+  background-color: #142043; /* Darker shade for hover */
+}
+
+/* Result Section */
+.ResultBox {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f8f9fa; /* Light neutral background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin-top: 20px;
+}
+
+.ResultBox h1 {
+  color: #1c2859;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Buttons and Interaction States */
+button {
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.98); /* Subtle press effect */
+}
+
+/* Clear Button */
+.Cancel {
+  background-color: #d6456e; /* Match with log-out button */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.Cancel:hover {
+  cursor: pointer;
+  background-color: #b53756; /* Slightly darker on hover */
+}
+
+/* Image Preview */
+img {
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsiveness */
+@media only screen and (min-width: 900px) {
+  .secondbody {
+    padding: 20px;
+    width: 40%;
+    margin: 60px auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .ActionBox {
+    width: 90%;
+  }
+  .ResultBox {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* Extra Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}

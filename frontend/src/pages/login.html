@@ -1,0 +1,55 @@
+<!-- frontend/src/pages/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <div id="message"></div>
+</body>
+</html>
+<script r>
+   // Login.js
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch('http://127.0.0.1:5000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Email: email,
+                Password: password
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // Handle successful login
+            document.getElementById('message').innerText = data.message;
+            // Optionally redirect or perform other actions
+        } else {
+            // Handle error response from the server
+            document.getElementById('message').innerText = data.error;
+        }
+    } catch (error) {
+        // Handle other errors (e.g., network issues)
+        document.getElementById('message').innerText = 'An error occurred. Please try again.';
+    }
+}); 
+</script> <!-- Link to your JavaScript file -->
